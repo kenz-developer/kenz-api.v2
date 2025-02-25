@@ -62,16 +62,6 @@
           "path": "/search/youtube?q="
         }
       ]
-    }, 
-    {
-      "name": "Download", 
-      "items": [
-        {
-          "name": "YTMP3", 
-          "desc": "Download Audio", 
-          "path": "/download/ytmp3?url="
-        }
-      ]
     }
   ]
 }
