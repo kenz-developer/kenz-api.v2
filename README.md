@@ -1,4 +1,4 @@
-# Rynn UI
+# Kenz UI
 
 ![Layout](https://files.catbox.moe/tot5d8.png)
 
@@ -24,11 +24,11 @@ Check out a live demo of Rynn UI [here](https://rynnn-ui.vercel.app)
 ### Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/RynnKunnn/Rynn-UI.git
+   git clone https://github.com/alzzhosting/kenz-api.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd Rynn-UI
+   cd kenz-api
    ```
 3. Install dependencies:
    ```bash
