@@ -1,11 +1,11 @@
 {
   "name": "Kenz Api's",
-  "version": "Kenz UI",
+  "version": "Kenz API V2",
   "description": "Simple and Easy-to-Use API Documentation",
   "header": {
     "status": "Online Bos!",
     "imageSrc": [
-      "https://files.catbox.moe/mkn8ws.jpg"
+      "https://kenz-cloud-production.up.railway.app/download/1740493076585.png"
     ],
     "imageSize": {
       "mobile": "80%",
@@ -31,9 +31,19 @@
       "name": "AI (Artificial Intelligence)",
       "items": [
         {
+          "name": "AI OpenPromt",
+          "desc": "Talk with AI OpenPromt",
+          "path": "/ai/openprompt?prompt=&q="
+        },
+        {
           "name": "LuminAI",
           "desc": "Talk with luminai",
           "path": "/ai/luminai?text="
+        },
+        {
+          "name": "GPT-KENZ",
+          "desc": "Talk with gpt-kenz",
+          "path": "/ai/gpt-kenz?text="
         },
         {
           "name": "HydroMind",
@@ -50,6 +60,11 @@
           "name": "Blue Archive",
           "desc": "Blue Archive Random Images",
           "path": "/random/ba"
+        },
+        {
+          "name": "Puisi Random",
+          "desc": "Random Puisi By Kenz",
+          "path": "/random/puisi"
         }
       ]
     },
@@ -60,16 +75,91 @@
           "name": "YouTube",
           "desc": "Video search",
           "path": "/search/youtube?q="
+        },
+        {
+          "name": "Search APK",
+          "desc": "Search APK PlayStore",
+          "path": "/search/playstore?q="
+        },
+        {
+          "name": "Search Domain Whois",
+          "desc": "Search Domain Anda",
+          "path": "/search/whois?domain="
+        },
+        {
+          "name": "Generator Emojimix",
+          "desc": "Create Emojimix",
+          "path": "/search/emojimix?emoji1=&emoji2="
+        },
+        {
+          "name": "Search Spotify",
+          "desc": "Search Music Spotify",
+          "path": "/search/spotifydl?q="
+        },
+        {
+          "name": "Search APK",
+          "desc": "Search APK Happymod",
+          "path": "/search/happymod?q="
         }
       ]
-    }, 
+    },
     {
-      "name": "Download", 
+      "name": "Download",
       "items": [
         {
-          "name": "YTMP3", 
-          "desc": "Download Audio", 
+          "name": "YTMP3",
+          "desc": "Download Audio",
           "path": "/download/ytmp3?url="
+        },
+        {
+          "name": "YTMP4",
+          "desc": "Download Video",
+          "path": "/download/ytmp4?url="
+        },
+        {
+          "name": "Gdrive",
+          "desc": "Download Gdrive",
+          "path": "/download/gdrive?url="
+        },
+        {
+          "name": "YTDL V2",
+          "desc": "Download Youtube",
+          "path": "/download/ytdlv2?url="
+        },
+        {
+          "name": "Instagram Video",
+          "desc": "Download Video Instagram",
+          "path": "/download/igdl?url="
+        },
+        {
+          "name": "Tiktok Video",
+          "desc": "Download Video Tiktok",
+          "path": "/download/ttdl?url="
+        }
+      ]
+    },
+    {
+      "name": "Stalking Sosmed",
+      "items": [
+        {
+        "name": "Stalking Youtube",
+        "desc": "Stalking Youtube Orang",
+        "path": "/stalking/youtube?user="
+        },
+        {
+        "name": "Stalking Tiktok",
+        "desc": "Stalking Tiktok Orang",
+        "path": "/stalking/tiktok?user="
+        }
+      ]
+    },
+    {
+      "name": "Status API",
+      "items": [
+        {
+          "name": "Status API Web",
+          "desc": "Runtime API & Request",
+          "path": "/stast/status"
         }
       ]
     }
