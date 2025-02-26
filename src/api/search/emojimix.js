@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/search/emojimix", async (req, res) => {
         let { emoji1, emoji2 } = req.query;
         if (!emoji1 || !emoji2) {
