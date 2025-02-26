@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/search/whois", async (req, res) => {
         let { domain } = req.query;
         if (!domain) return res.status(400).json({ status: false, error: "Domain is required" });
