@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/ai/openprompt", async (req, res) => {
         let { prompt, q } = req.query;
         if (!prompt || !q) {
