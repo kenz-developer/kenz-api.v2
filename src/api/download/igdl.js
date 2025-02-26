@@ -1,7 +1,7 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get('/download/igdl', async (req, res) => {
         const { url } = req.query;
         if (!url) {
