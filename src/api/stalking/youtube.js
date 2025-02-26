@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/stalking/youtube", async (req, res) => {
         let { user } = req.query;
         if (!user) return res.status(400).json({ status: false, error: "Username is required" });
