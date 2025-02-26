@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/download/gdrive", async (req, res) => {
         let { url } = req.query;
         if (!url) {
