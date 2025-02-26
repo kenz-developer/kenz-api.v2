@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/ai/gpt-kenz", async (req, res) => {
         let { text } = req.query;
         if (!text) return res.status(400).json({ status: false, error: "Text is required" });
