@@ -1,6 +1,6 @@
 const express = require("express");
 
-module.exports = function (app) {
+module.exports = function(app) {
     const puisiList = [
         {
             title: "Senja di Ujung Hari",
