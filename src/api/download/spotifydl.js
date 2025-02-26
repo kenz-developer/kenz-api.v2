@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 const fs = require("fs");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/search/spotifydl", async (req, res) => {
         let { q } = req.query;
         if (!q) return res.status(400).json({ status: false, error: "Query is required" });
