@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/download/ytdlv2", async (req, res) => {
         let { url } = req.query;
         if (!url) return res.status(400).json({ status: false, error: "URL is required" });
