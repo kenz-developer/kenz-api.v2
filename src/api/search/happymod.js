@@ -1,7 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
 
-module.exports = function (app) {
+module.exports = function(app) {
     app.get("/search/happymod", async (req, res) => {
         let { q } = req.query;
         if (!q) return res.status(400).json({ status: false, error: "Query is required" });
