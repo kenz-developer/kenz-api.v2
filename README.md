@@ -24,11 +24,11 @@ Check out a live demo of Rynn UI [here](https://rynnn-ui.vercel.app)
 ### Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/alzzhosting/kenz-api.git
+   git clone https://github.com/kenz-developer/kenz-api.v2.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd kenz-api
+   cd kenz-api.v2
    ```
 3. Install dependencies:
    ```bash
@@ -85,8 +85,8 @@ Organize APIs into categories for better navigation:
 Here’s an example of how your settings.json file might look:
 ```json
 {
-  "name": "Rynn Api's",
-  "version": "Rynn UI",
+  "name": "Kenz Api's",
+  "version": "Kenz UI",
   "description": "Simple and Easy-to-Use API Documentation",
   "header": {
     "status": "Online!",
