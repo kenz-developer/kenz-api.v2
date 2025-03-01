@@ -20,7 +20,7 @@ function checkApiKey(req, res, next) {
 }
 
 module.exports = function (app) {
-    app.get("/api/ytmp3", checkApiKey, async (req, res) => {
+    app.get("/download/ytmp3", checkApiKey, async (req, res) => {
         let { url } = req.query;
         if (!url) {
             return res.status(400).json({ status: false, error: "URL is required" });
