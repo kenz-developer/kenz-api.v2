@@ -2,7 +2,7 @@ const express = require("express");
 const fetch = require("node-fetch");
 
 module.exports = function(app) {
-    app.get("/ai/openprompt", prompt, async (req, res) => {
+    app.get("/ai/openprompt", async (req, res) => {
         let { prompt, q } = req.query;
         if (!prompt || !q) {
             return res.status(400).json({ status: false, error: "Prompt and query are required" });
