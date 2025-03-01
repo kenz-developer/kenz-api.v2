@@ -1,42 +1,41 @@
 const express = require("express");
 const fetch = require("node-fetch");
-const cheerio = require("cheerio");
+
+const apiKeys = {
+    "kenzapikey": { limit: 5, used: 0 }
+};
+
+function checkApiKey(req, res, next) {
+    let key = req.query.apikey;
+    if (!key || !apiKeys[key]) {
+        return res.status(403).json({ status: false, error: "Invalid or missing API key" });
+    }
+
+    if (apiKeys[key].used >= apiKeys[key].limit) {
+        return res.status(429).json({ status: false, error: "API key limit exceeded" });
+    }
+
+    apiKeys[key].used++;
+    next();
+}
 
 module.exports = function (app) {
-    app.get("/api/ytmp3", async (req, res) => {
+    app.get("/api/ytmp3", checkApiKey, async (req, res) => {
         let { url } = req.query;
         if (!url) {
             return res.status(400).json({ status: false, error: "URL is required" });
         }
 
         try {
-            let y2mateUrl = "https://www.y2mate.com/youtube-mp3";
-            let response = await fetch(y2mateUrl, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded"
-                },
-                body: `url=${encodeURIComponent(url)}`
-            });
+            let apiUrl = `https://api.vevios.com/api/ytmp3?url=${encodeURIComponent(url)}`;
+            let response = await fetch(apiUrl);
+            let data = await response.json();
 
-            let html = await response.text();
-            let $ = cheerio.load(html);
-
-            let title = $("h2").text().trim();
-            let duration = $(".info-duration").text().trim();
-            let thumbnail = $(".img-responsive").attr("src");
-            let audioUrl = $("a.btn-download").attr("href");
-
-            if (!audioUrl) throw new Error("Gagal mendapatkan link download");
+            if (!data.status) throw new Error(data.error || "Gagal mengambil data");
 
             res.json({
                 status: true,
-                result: {
-                    title,
-                    duration,
-                    thumbnail,
-                    audio_url: audioUrl
-                }
+                result: data.result
             });
 
         } catch (error) {
