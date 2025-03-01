@@ -100,6 +100,16 @@
       ]
     },
     {
+      "name": "Tools", 
+      "items": [
+        {
+          "name": "Shortlink", 
+          "desc": "Short URL", 
+          "path": "/tools/shortlink?url="
+        }
+      ]  
+    }, 
+    {
       "name": "Download",
       "items": [
         {
