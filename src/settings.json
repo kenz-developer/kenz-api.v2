@@ -129,8 +129,13 @@
           "path": "/download/gdrive?url="
         },
         {
+          "name": "YTDL V3",
+          "desc": "Download Youtube V3",
+          "path": "/download/ytdlv3?url=&type=&quality="
+        },
+        {
           "name": "YTDL V2",
-          "desc": "Download Youtube",
+          "desc": "Download Youtube V2",
           "path": "/download/ytdlv2?url="
         },
         {
