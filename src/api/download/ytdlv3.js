@@ -2,8 +2,9 @@ const express = require("express");
 const fetch = require("node-fetch");
 
 module.exports = function (app) {
-    app.get("/download/ytdlv3", async (req, res) => {
-        let { url, type = "mp4", quality = "720p" } = req.query;
+    app.get("/download/ytdlv3", async function (req, res, type = req.query.type || "mp4", quality = req.query.quality || "720p") {
+        let { url } = req.query;
+
         if (!url) {
             return res.status(400).json({ status: false, error: "URL is required" });
         }
@@ -20,13 +21,13 @@ module.exports = function (app) {
 
             res.json({
                 status: true,
+                type: type,
+                quality: quality,
                 result: {
                     title: data.result.title,
                     duration: data.result.duration,
                     thumbnail: data.result.thumbnail,
-                    download_url: data.result.url,
-                    type: type,
-                    quality: quality
+                    download_url: data.result.url
                 }
             });
 
