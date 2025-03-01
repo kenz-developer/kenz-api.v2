@@ -2,8 +2,10 @@ const express = require("express");
 const fetch = require("node-fetch");
 
 const apiKeys = {
-    "kenzapikey": { limit: 5, used: 0 }
+    "kenzapikey": { limit: 5 }
 };
+
+const usageTracker = new Map(); // Simpan penggunaan API key sementara
 
 function checkApiKey(req, res, next) {
     let key = req.query.apikey;
@@ -11,11 +13,15 @@ function checkApiKey(req, res, next) {
         return res.status(403).json({ status: false, error: "Invalid or missing API key" });
     }
 
-    if (apiKeys[key].used >= apiKeys[key].limit) {
+    if (!usageTracker.has(key)) {
+        usageTracker.set(key, 0); // Inisialisasi jika belum ada
+    }
+
+    if (usageTracker.get(key) >= apiKeys[key].limit) {
         return res.status(429).json({ status: false, error: "API key limit exceeded" });
     }
 
-    apiKeys[key].used++;
+    usageTracker.set(key, usageTracker.get(key) + 1); // Tambah penggunaan
     next();
 }
 
