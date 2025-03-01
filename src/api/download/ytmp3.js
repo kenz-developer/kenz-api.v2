@@ -27,7 +27,7 @@ module.exports = function (app) {
         }
 
         try {
-            let apiUrl = `https://api.vevios.com/api/ytmp3?url=${encodeURIComponent(url)}`;
+            let apiUrl = `https://restapi-v2.simplebot.my.id/download/ytmp3?url=${encodeURIComponent(url)}}}`;
             let response = await fetch(apiUrl);
             let data = await response.json();
 
