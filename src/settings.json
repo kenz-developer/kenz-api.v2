@@ -28,6 +28,11 @@
       "name": "AI (Artificial Intelligence)",
       "items": [
         {
+          "name": "AI DeepSeek", 
+          "desc": " Talk with DeepSeek", 
+          "path": "/ai/deepseek?prompt="
+        }
+        {
           "name": "AI OpenPromt",
           "desc": "Talk with AI OpenPromt",
           "path": "/ai/openprompt?prompt=&q="
