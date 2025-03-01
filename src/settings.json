@@ -116,7 +116,7 @@
         {
           "name": "YTMP3",
           "desc": "Download Audio",
-          "path": "/download/ytmp3?url="
+          "path": "/download/ytmp3?url=&apikey="
         },
         {
           "name": "YTMP4",
