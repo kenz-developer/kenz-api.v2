@@ -1,21 +1,25 @@
-const fetch = require('node-fetch');
+const express = require("express");
+const fetch = require("node-fetch");
 
-module.exports = function(app) {
-    app.get('/download/ytmp3', async (req, res) => {
-        const { url } = req.query;
+module.exports = function (app) {
+    app.get("/download/ytmp3", async (req, res) => {
+        let { url } = req.query;
         if (!url) {
-            return res.status(400).json({ status: false, error: 'URL is required' });
+            return res.status(400).json({ status: false, error: "URL is required" });
         }
 
         try {
-            const apiUrl = `https://api.vevioz.com/api/button/mp3?url=${encodeURIComponent(url)}`;
-            const response = await fetch(apiUrl);
-            if (!response.ok) throw new Error('Gagal mengambil data');
+            let apiUrl = `https://api.skyzopedia.us.kg/api/download/ytmp3?url=${encodeURIComponent(url)}`;
+            let response = await fetch(apiUrl);
+            let data = await response.json();
+
+            if (!data.status) throw new Error(data.error || "Gagal mengambil data");
 
             res.json({
                 status: true,
-                downloadUrl: apiUrl
+                result: data.result
             });
+
         } catch (error) {
             res.status(500).json({ status: false, error: error.message });
         }
