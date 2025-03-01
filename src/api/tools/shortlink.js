@@ -9,7 +9,7 @@ module.exports = function (app) {
         }
 
         try {
-            let apiUrl = `https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`;
+            let apiUrl = `https://jazxcode.biz.id/tools/tinyurl?url=${encodeURIComponent(url)}`;
             let response = await fetch(apiUrl);
             let shortUrl = await response.text();
 
@@ -18,8 +18,8 @@ module.exports = function (app) {
             res.json({
                 status: true,
                 result: {
-                    original_url: url,
-                    short_url: shortUrl
+                    originalUrl: url,
+                    shortUrl: shortUrl
                 }
             });
 
