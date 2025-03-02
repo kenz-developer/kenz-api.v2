@@ -167,6 +167,11 @@
         "name": "Stalking Tiktok",
         "desc": "Stalking Tiktok Orang",
         "path": "/stalking/tiktok?user="
+        }, 
+        {
+          "name": "Stalking Free Fire", 
+          "desc": "Stalking Free Fire Orang", 
+          "path": "/stalking/epep?id="
         }
       ]
     },
