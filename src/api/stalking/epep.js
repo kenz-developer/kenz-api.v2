@@ -16,7 +16,7 @@ module.exports = function (app) {
 
             res.json({
                 status: true,
-                result: result.result
+                data: result.result
             });
 
         } catch (error) {
