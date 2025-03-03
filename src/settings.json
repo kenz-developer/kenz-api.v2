@@ -35,7 +35,7 @@
         {
           "name": "AI Mistral", 
           "desc": "Talk With Mistral", 
-          "path": "/ai/mistral?text="
+          "path": "/ai/mistral?text=&model="
         }, 
         {
           "name": "AI OpenPromt",
