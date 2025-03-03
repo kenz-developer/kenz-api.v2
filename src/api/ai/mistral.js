@@ -1,25 +1,30 @@
-const express = require("express");
-const fetch = require("node-fetch");
-
+const axios = require('axios');
+const FormData = require('form-data');
 module.exports = function(app) {
-    app.get("/ai/mistral", async (req, res) => {
-        let { text } = req.query;
-        if (!text) return res.status(400).json({ status: false, error: "Text is required" });
-
+    async function hydromind(content, model) {
+        const form = new FormData();
+        form.append('content', content);
+        form.append('model', model);
+        const { data } = await axios.post('https://mind.hydrooo.web.id/v1/chat/', form, {
+            headers: {
+                ...form.getHeaders(),
+            }
+        })
+        return data;
+    }
+    app.get('/ai/mistral', async (req, res) => {
         try {
-            let apiUrl = `https://jazxcode.biz.id/ai/mistral?text=${encodeURIComponent(text)}`;
-            let response = await fetch(apiUrl);
-            let data = await response.json();
-
-            if (!data.status) throw new Error(data.error || "Gagal mengambil data");
-
-            res.json({
+            const { text, model } = req.query;
+            if (!text || !model) {
+                return res.status(400).json({ status: false, error: 'Text and Model is required' });
+            }
+            const { result } = await hydromind(text, model);
+            res.status(200).json({
                 status: true,
-                result: data.result
+                result
             });
-
         } catch (error) {
             res.status(500).json({ status: false, error: error.message });
         }
     });
-};
+}
