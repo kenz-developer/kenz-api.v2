@@ -40,7 +40,7 @@
         {
           "name": "AI Llama", 
           "desc": "Talk With Llama", 
-          "path": "/api/llama?text=&model="
+          "path": "/ai/llama?text=&model="
         }, 
         {
           "name": "AI OpenPromt",
