@@ -1,7 +1,7 @@
 const axios = require('axios');
 const FormData = require('form-data');
 module.exports = function(app) {
-    async function mistral(content, model) {
+    async function deepseek(content, model) {
         const form = new FormData();
         form.append('content', content);
         form.append('model', model);
@@ -12,13 +12,13 @@ module.exports = function(app) {
         })
         return data;
     }
-    app.get('/ai/mistral', async (req, res) => {
+    app.get('/ai/deepseekr1', async (req, res) => {
         try {
             const { text, model } = req.query;
             if (!text || !model) {
                 return res.status(400).json({ status: false, error: 'Text and Model is required' });
             }
-            const { result } = await mistral(text, model);
+            const { result } = await deepseek(text, model);
             res.status(200).json({
                 status: true,
                 result
