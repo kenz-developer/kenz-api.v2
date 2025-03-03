@@ -33,9 +33,9 @@
           "path": "/ai/deepseek?prompt="
         }, 
         {
-          "name": "AI Mistral", 
-          "desc": "Talk With Mistral", 
-          "path": "/ai/mistral?text=&model="
+          "name": "AI Deepseek R1", 
+          "desc": "Talk With Deepseek R1", 
+          "path": "/ai/deepseekr1?text=&model="
         }, 
         {
           "name": "AI OpenPromt",
