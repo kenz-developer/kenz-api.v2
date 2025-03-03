@@ -38,6 +38,11 @@
           "path": "/ai/deepseekr1?text=&model="
         }, 
         {
+          "name": "AI Llama", 
+          "desc": "Talk With Llama", 
+          "path": "/api/llama?text=&model="
+        }, 
+        {
           "name": "AI OpenPromt",
           "desc": "Talk with AI OpenPromt",
           "path": "/ai/openprompt?prompt=&q="
