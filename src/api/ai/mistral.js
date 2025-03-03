@@ -1,7 +1,7 @@
 const axios = require('axios');
 const FormData = require('form-data');
 module.exports = function(app) {
-    async function hydromind(content, model) {
+    async function mistral(content, model) {
         const form = new FormData();
         form.append('content', content);
         form.append('model', model);
@@ -18,7 +18,7 @@ module.exports = function(app) {
             if (!text || !model) {
                 return res.status(400).json({ status: false, error: 'Text and Model is required' });
             }
-            const { result } = await hydromind(text, model);
+            const { result } = await mistral(text, model);
             res.status(200).json({
                 status: true,
                 result
