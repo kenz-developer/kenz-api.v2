@@ -5,22 +5,18 @@ module.exports = function (app) {
     app.get("/tools/shortlink", async (req, res) => {
         let { url } = req.query;
         if (!url) {
-            return res.status(400).json({ status: false, error: "URL is required" });
+            return res.status(400).json({ status: false, error: "URL diperlukan!" });
         }
 
         try {
-            let apiUrl = `https://jazxcode.biz.id/tools/tinyurl?url=${encodeURIComponent(url)}`;
-            let response = await fetch(apiUrl);
+            let response = await fetch(`https://tinyurl.com/api-create.php?url=${encodeURIComponent(url)}`);
             let shortUrl = await response.text();
 
-            if (!shortUrl.startsWith("http")) throw new Error("Gagal memperpendek URL");
+            if (!shortUrl.startsWith("https://")) throw new Error("Gagal memperpendek URL!");
 
             res.json({
                 status: true,
-                result: {
-                    originalUrl: url,
-                    shortUrl: shortUrl
-                }
+                result: shortUrl
             });
 
         } catch (error) {
