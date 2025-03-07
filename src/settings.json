@@ -122,6 +122,11 @@
           "name": "Shortlink", 
           "desc": "Short URL", 
           "path": "/tools/shortlink?url="
+        }, 
+        {
+          "name": "Pastebin", 
+          "desc": "Pastebin Code", 
+          "path": "/tools/pastebin?content="
         }
       ]  
     }, 
