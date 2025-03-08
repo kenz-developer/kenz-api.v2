@@ -13,22 +13,21 @@ module.exports = function (app) {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams({
-                    api_dev_key: "H-pHns198c_wKHPvELbZcYY7SFQvataL", // API Key kamu
+                    api_dev_key: "H-pHns198c_wKHPvELbZcYY7SFQvataL",
                     api_option: "paste",
                     api_paste_code: content,
-                    api_paste_private: "1", // 0 = public, 1 = unlisted, 2 = private
-                    api_paste_expire_date: "1Y", // 10M, 1H, 1D, 1W, 2W, 1M, 6M, 1Y, N (never)
-                    api_paste_format: "html5"
+                    api_paste_private: "1",
+                    api_paste_expire_date: "1H",
+                    api_paste_format: "html5" // Sesuai request buat HTML
                 })
             });
 
             let pasteUrl = await response.text();
+            console.log(pasteUrl); // Debugging
+
             if (!pasteUrl.startsWith("http")) throw new Error("Gagal membuat paste!");
 
-            res.json({
-                status: true,
-                result: { url: pasteUrl }
-            });
+            res.json({ status: true, result: { url: pasteUrl } });
 
         } catch (error) {
             res.status(500).json({ status: false, error: error.message });
