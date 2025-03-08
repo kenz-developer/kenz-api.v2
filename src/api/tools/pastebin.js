@@ -17,8 +17,8 @@ module.exports = function (app) {
                     api_option: "paste",
                     api_paste_code: content,
                     api_paste_private: "1", // 0 = public, 1 = unlisted, 2 = private
-                    api_paste_expire_date: "1H", // 10M, 1H, 1D, 1W, 2W, 1M, 6M, 1Y, N (never)
-                    api_paste_format: "text"
+                    api_paste_expire_date: "1Y", // 10M, 1H, 1D, 1W, 2W, 1M, 6M, 1Y, N (never)
+                    api_paste_format: "html5"
                 })
             });
 
