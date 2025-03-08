@@ -16,8 +16,8 @@ module.exports = function (app) {
                     api_dev_key: "H-pHns198c_wKHPvELbZcYY7SFQvataL",
                     api_option: "paste",
                     api_paste_code: content,
-                    api_paste_private: "1",
-                    api_paste_expire_date: "1H",
+                    api_paste_private: "0",
+                    api_paste_expire_date: "1Y",
                     api_paste_format: "html5" // Sesuai request buat HTML
                 })
             });
